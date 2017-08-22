@@ -15,7 +15,8 @@ You spawn on a fixed map and expand your civilisation over all of it. There are 
 
 - Determine if the game will be in real time or turn based. Turn based would probably be easier to make. 
 
-- A few technologies:
+
+A few technologies:
 - Unity & C#
 - DirectX & C++
 - LibGDX & Java
