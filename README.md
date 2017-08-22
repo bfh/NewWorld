@@ -17,7 +17,7 @@ You spawn on a fixed map and expand your civilisation over all of it. There are 
 
 
 A few technologies:
-- Unity & C#
+- Unity (or XNA) & C#
 - DirectX & C++
 - LibGDX & Java
 
