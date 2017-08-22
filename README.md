@@ -15,6 +15,11 @@ You spawn on a fixed map and expand your civilisation over all of it. There are 
 
 - Determine if the game will be in real time or turn based. Turn based would probably be easier to make. 
 
+- A few technologies:
+- Unity & C#
+- DirectX & C++
+- LibGDX & Java
+
 ## Add your ideas for the game here
 Each settlement is a “unit” somewhat like a dwarf in dwarf fortress or a person in RimWorld. With their own needs and abilities. As their population grows they can do more tasks. They fulfil their needs with nearby hexes if they can, if not they may trade with other settlements. If they cannot do that either they will suffer penalties such as a shrinking population. There is a hapiness rate at each village that will influence production and loyalty. Further, each village will on a more or less regular basis (maybe dependent on the villages gross production and freedom?) create “Initiatives” that uses a lot of the villages resources, e.g. build an alchemist academy, rise up in rebellion etc.  
 
