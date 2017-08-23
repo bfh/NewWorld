@@ -18,6 +18,12 @@ You spawn on a fixed map and expand your civilisation over all of it. There are 
 - Determine if the game will be in real time or turn based. 
 	- The consensus seems to be hex and turn based -Yves
 
+
+A few technologies:
+- Unity (or XNA) & C#
+- DirectX & C++
+- LibGDX & Java
+
 ## Add your ideas for the game here
 Every hex should be a challenge to overcome. First you need to *scout* it, then *conquer* it finally you can *claim* it. Once it is claimed you gain access to it’s properties.
 - Scouting a hex reveals what is in it. It triggers a scout event where you have to decide how to interact with what you’ve discovered. eg. you can choose to *trade* with a tribe of natives. This determines what you need to do in order to *conquer* the hex.
