@@ -10,12 +10,20 @@ You spawn on a fixed map and expand your civilisation over all of it. There are 
 
 # To-do
 - Native or web?
-- What framework do we use? Unity?
+	- I’d **like** to do a web version, however a native solution sounds like less work. i can not accurately predict how much work needs to be done, but i suppose quite a bit. At least for the MVP I say we use a native solution. -Yves 
+- What framework do we use? 
+	- Unity is free, powerful and widely used. It sounds like a good solution.  -Yves
 - What language do we use?
 
-- Determine if the game will be in real time or turn based. Turn based would probably be easier to make. 
+- Determine if the game will be in real time or turn based. 
+	- The consensus seems to be hex and turn based -Yves
 
 ## Add your ideas for the game here
+Every hex should be a challenge to overcome. First you need to *scout* it, then *conquer* it finally you can *claim* it. Once it is claimed you gain access to it’s properties.
+- Scouting a hex reveals what is in it. It triggers a scout event where you have to decide how to interact with what you’ve discovered. eg. you can choose to *trade* with a tribe of natives. This determines what you need to do in order to *conquer* the hex.
+	- Conquering a hex is driving out what occupied it before and replacing it with your own. e.g. if you chose to *attack* a tribe of natives while *scouting* you need to kill them, if you instead chose to *trade* with the natives you might be able to *integrate* them into your civilisation.
+	- Claiming a hex is available when you are the only force in it. A hex remains claimed until somebody *conquers*it.
+		 
 Each settlement is a “unit” somewhat like a dwarf in dwarf fortress or a person in RimWorld. With their own needs and abilities. As their population grows they can do more tasks. They fulfil their needs with nearby hexes if they can, if not they may trade with other settlements. If they cannot do that either they will suffer penalties such as a shrinking population. There is a hapiness rate at each village that will influence production and loyalty. Further, each village will on a more or less regular basis (maybe dependent on the villages gross production and freedom?) create “Initiatives” that uses a lot of the villages resources, e.g. build an alchemist academy, rise up in rebellion etc.  
 
 Heroes: Heroes are specific modifiers for a settlement that can be assigned to one. They confer special effects to it for a limited time.
