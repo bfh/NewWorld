@@ -8,6 +8,13 @@ It will have simple 2d graphics. Consisting mostly of the World map. important l
 
 # MVP (minimal viable product)
 You spawn on a fixed map and expand your civilisation over all of it. You need ressources (Food and Materials) to expand your civilisation.
+# Inspirations
+- Foundation by Isaac asimov
+- Banished
+- Stellaris
+- Civilization
+- The west marches (D&D play mode)
+
 # Similar Games + Differences
 - Settlers of catan
 	- Not a multi player game
@@ -121,3 +128,16 @@ Each settlement is a “unit” somewhat like a dwarf in dwarf fortress or a per
 
 Heroes: Heroes are specific modifiers for a settlement that can be assigned to one. They confer special effects to it for a limited time.
 
+
+# My Vision for the game
+Legend:  
+() means an additional feature somewhere in the future should we have the time
+*this*means needs to be in the MVP
+
+(You prepare for your colonisation of the new world.)
+You choose your starting location from a limited number of hexes on the coast.
+*You land on your starting location and build a village with the resources you brought with you*
+Before you even get set up properly the first problems start showing up, (diseases/)attacks from wildlife/… 
+You overcome these difficulties and *Set out to explore the nearby land*
+There you find *resources*, enemies, natives, ruins… Challenges to overcome.
+You do this and now have more power in your 
