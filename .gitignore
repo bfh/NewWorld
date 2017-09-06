@@ -43,3 +43,4 @@ Thumbs.db
 
 #merge orig files
 *.orig
+*.plist

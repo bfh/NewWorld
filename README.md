@@ -9,7 +9,7 @@ It will have simple 2d graphics. Consisting mostly of the World map. important l
 # MVP (minimal viable product)
 You spawn on a fixed map and expand your civilisation over all of it. You need ressources (Food and Materials) to expand your civilisation.
 # Inspirations
-- Foundation by Isaac asimov
+- Foundation by Isaac Asimov
 - Banished
 - Stellaris
 - Civilization
@@ -56,7 +56,7 @@ You spawn on a fixed map and expand your civilisation over all of it. You need r
 ## Name the Game:
 Name idea tank, just write it down if you have an idea:
 - March West
-- The Forth world
+- The Fourth world
 ## Design the Game:
 - How long should a single play through be?
 - What are the loss conditions?
@@ -64,7 +64,6 @@ Name idea tank, just write it down if you have an idea:
 - How does our tech tree look?
 - How does the moment-to-moment gameplay look and feel like?
 - Do we have Lore? If so how do we implement it?
-	  
 
 ## Figure out Unity.
 - Do the roll-a-ball and space-shooter Tutorials for Unity.
@@ -99,7 +98,7 @@ Name idea tank, just write it down if you have an idea:
 		- Town
 		- City
 		- Ruin
-		- 
+		\- 
 - Menu
 	- Main
 		- New game
