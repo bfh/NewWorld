@@ -8,8 +8,10 @@ public class HexGrid : MonoBehaviour {
 	public int y = 5;
 
 	public float radius = 0.5f;
-	public bool useAsInnerCircleRadius = true;
+	public bool useAsInnerCircleRadius = false;
 
+	public int xStart = -5;
+	public int yStart = -5;
 	private float offsetX, offsetY;
 
 	void Start() {
