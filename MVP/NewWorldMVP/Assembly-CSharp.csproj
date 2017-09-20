@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\cameraMovement.cs" />
      <Compile Include="Assets\HexGrid.cs" />
      <Compile Include="Assets\Maus.cs" />
  <Reference Include="UnityEngine.Analytics">
