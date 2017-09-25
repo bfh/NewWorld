@@ -17,7 +17,7 @@ public class Maus : MonoBehaviour {
 	Color color1 = Color.blue;
 	Color color2 = Color.green;
 	Color color3 = Color.yellow;
-
+	 
 	// Use this for initialization
 
 	void ChangeColor (Color newColor){
@@ -31,7 +31,12 @@ public class Maus : MonoBehaviour {
 
 	void OnMouseDown(){
 		//
-		ChangeState ((state + 1)%numberOfStates);
+//		if (PlayerRessources.materials >= 100) {
+//			PlayerRessources.materials -= 100;
+			ChangeState ((state + 1) % numberOfStates);
+//		} else {
+			Debug.Log ("Not enough Minerals");
+//		}
 		}
 		
 	void ChangeState(int newState){

@@ -29,4 +29,4 @@ Hex Modifiers:
 ## Research:
 
 ## Events:
-When exploring a new hex for the first time or after some time inteval events occur that need to be resolved by the player.
+When exploring a hex a event pops up where the player has to choose between different options (Randomly chosen depending on the type of hex and choices the player made), depending on his choice something different happens. e.g. Enemy faction spawning, unexpected resource costs, an unlikely ally etc.
