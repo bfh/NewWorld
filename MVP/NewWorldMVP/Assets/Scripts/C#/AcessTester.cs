@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRessources : MonoBehaviour {
+public class AcessTester : MonoBehaviour {
 
-	public int food;
+	public GameObject player;
+	int food;
 
 	// Use this for initialization
 	void Start () {
-		
+		Debug.Log("Food Value is " + food);
 	}
 	
 	// Update is called once per frame

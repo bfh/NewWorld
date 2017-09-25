@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\C#\AcessTester.cs" />
      <Compile Include="Assets\Scripts\C#\cameraMovement.cs" />
      <Compile Include="Assets\Scripts\C#\HexGrid.cs" />
      <Compile Include="Assets\Scripts\C#\Maus.cs" />

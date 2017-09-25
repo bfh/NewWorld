@@ -8,56 +8,65 @@ public class Maus : MonoBehaviour {
 	//state = 2 explored
 	//state = 3 conquered
 	public int state = 0;
+	GameObject player;
+
+	int food;
+		
+	bool debug = false;
 
 	//the number of states, used for changing states.
 	int numberOfStates = 4;
 
-	//The colors corespond to their states, color0 for state 0 color 1 for state 1 etc.
-	Color color0 = Color.black;
-	Color color1 = Color.blue;
-	Color color2 = Color.green;
-	Color color3 = Color.yellow;
-	 
-	// Use this for initialization
+	//The colors corespond to their state stateColor[0] is for state 0 etc.
+	static Color[] stateColor = new Color[] {Color.black, Color.blue, Color.blue, Color.green, Color.yellow};
 
-	void ChangeColor (Color newColor){
-		GetComponent<SpriteRenderer>().color = newColor;
-		Debug.Log ("Changing Color to " + newColor);
+	//int food = 0;//player.GetComponent<PlayerRessources>().food;
+
+	void ChangeColor (int index){
+		GetComponent<SpriteRenderer>().color = stateColor[index];
+		Debug.Log ("Changing Color to " + stateColor[index]);
 	}
-
+	// Use this for initialization
 	void Start () {
-		ChangeColor (color0);
+		player = GameObject.Find ("Player");
+		if (player.GetComponent<PlayerRessources> ().food != null) {
+		food = player.GetComponent<PlayerRessources>().food;
+		}
+	
+		if (debug) 
+		{
+			ChangeColor (0);
+		}
 	}
 
 	void OnMouseDown(){
-		//
-//		if (PlayerRessources.materials >= 100) {
-//			PlayerRessources.materials -= 100;
+		
+		if (food >= 100) {
+	//		food -= 100;
 			ChangeState ((state + 1) % numberOfStates);
-//		} else {
-			Debug.Log ("Not enough Minerals");
-//		}
+			if (debug) 
+			{
+	//			Debug.Log ("New Food = " + food);
+			}
+		} else {
+			Debug.Log ("Not enough Minerals");		}
 		}
 		
 	void ChangeState(int newState){
 		state = newState;
 		Debug.Log ("Changed state to " + newState);
-
+		ChangeColor (newState);
 		switch (state) {
 		case 0:
-			ChangeColor (color0);
 			break;
 
 		case 1:
-			ChangeColor (color1);
 			break;
 
 		case 2:
-			ChangeColor (color2);
 			break;
 		
 		case 3:
-			ChangeColor (color3);
 			break;
 
 		default:
