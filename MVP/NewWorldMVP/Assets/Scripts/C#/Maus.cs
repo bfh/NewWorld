@@ -8,10 +8,8 @@ public class Maus : MonoBehaviour {
 	//state = 2 explored
 	//state = 3 conquered
 	public int state = 0;
-	GameObject player;
-
-	int food;
-		
+	//GameObject player;
+	static int food = 150;
 	bool debug = false;
 
 	//the number of states, used for changing states.
@@ -24,30 +22,24 @@ public class Maus : MonoBehaviour {
 
 	void ChangeColor (int index){
 		GetComponent<SpriteRenderer>().color = stateColor[index];
-		Debug.Log ("Changing Color to " + stateColor[index]);
+		if (debug) {
+			Debug.Log ("Changing Color to " + stateColor [index]);
+		}
 	}
+		
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find ("Player");
-		if (player.GetComponent<PlayerRessources> ().food != null) {
-		food = player.GetComponent<PlayerRessources>().food;
-		}
-	
-		if (debug) 
-		{
 			ChangeColor (0);
-		}
 	}
 
 	void OnMouseDown(){
-		
 		if (food >= 100) {
-	//		food -= 100;
+			food -= 100;
 			ChangeState ((state + 1) % numberOfStates);
-			if (debug) 
-			{
-	//			Debug.Log ("New Food = " + food);
-			}
+		//	if (debug) 
+		//	{
+				Debug.Log ("New Food = " + food);
+		//	}
 		} else {
 			Debug.Log ("Not enough Minerals");		}
 		}
