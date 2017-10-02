@@ -30,6 +30,22 @@ public class HexGrid : MonoBehaviour {
 			}
 		}
 		Debug.Log("All spwaned");
+
+		Debug.Log ("Starting assignment process");
+		for( int i = 0; i < x; i++ ) {
+			for( int j = 0; j < y; j++ ) {
+				Debug.Log ("Current i = " + i);
+				GameObject newHex = GameObject.Find ("Hex [" + i + "," + j + "]");
+				newHex.GetComponent<Maus>().northEastHex = GameObject.Find("Hex [" + (i+1) + "," + (j+1)  + "]");
+				newHex.GetComponent<Maus>().eastHex = GameObject.Find("Hex [" + (i+1) + "," + j  + "]");
+				newHex.GetComponent<Maus>().southEastHex = GameObject.Find("Hex [" + (i+1) + "," + (j -1)  + "]");
+				newHex.GetComponent<Maus>().southWestHex = GameObject.Find("Hex [" + (i) + "," + (j-1)  + "]");
+				newHex.GetComponent<Maus>().westHex = GameObject.Find("Hex [" + (i-1) + "," + j  + "]");
+				newHex.GetComponent<Maus>().northWestHex = GameObject.Find("Hex [" + (i) + "," + (j+1)  + "]");
+
+
+			}
+		}
 	}
 
 	Vector2 HexOffset( int x, int y ) {

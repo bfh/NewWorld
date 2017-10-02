@@ -8,15 +8,24 @@ public class Maus : MonoBehaviour {
 	//state = 2 explored
 	//state = 3 conquered
 	public int state = 0;
-	//GameObject player;
-	static int food = 150;
+	public static int food = 500;
 	bool debug = false;
+
+
+	//Initialize neighbouring Hexes
+	public GameObject northEastHex;
+	public GameObject eastHex;
+	public GameObject southEastHex;
+	public GameObject southWestHex;
+	public GameObject westHex;
+	public GameObject northWestHex;
+
 
 	//the number of states, used for changing states.
 	int numberOfStates = 4;
 
 	//The colors corespond to their state stateColor[0] is for state 0 etc.
-	static Color[] stateColor = new Color[] {Color.black, Color.blue, Color.blue, Color.green, Color.yellow};
+	static Color[] stateColor = new Color[] {Color.black, Color.blue, Color.white, Color.green, Color.yellow};
 
 	//int food = 0;//player.GetComponent<PlayerRessources>().food;
 
@@ -35,6 +44,28 @@ public class Maus : MonoBehaviour {
 	void OnMouseDown(){
 		if (food >= 100) {
 			food -= 100;
+			if (state == 1) {
+				Debug.Log("state is 1");
+
+				if (eastHex.GetComponent<Maus> ().state == 0) {
+					eastHex.GetComponent<Maus> ().ChangeState (1);
+				}
+				if (northEastHex.GetComponent<Maus> ().state == 0) {
+					northEastHex.GetComponent<Maus> ().ChangeState (1);
+				}
+				if (southEastHex.GetComponent<Maus> ().state == 0) {
+					southEastHex.GetComponent<Maus> ().ChangeState (1);
+				}
+				if (southWestHex.GetComponent<Maus> ().state == 0) {
+					southWestHex.GetComponent<Maus> ().ChangeState (1);
+				}
+				if (westHex.GetComponent<Maus> ().state == 0) {
+					westHex.GetComponent<Maus> ().ChangeState (1);
+				}
+				if (northWestHex.GetComponent<Maus> ().state == 0) {
+					northWestHex.GetComponent<Maus> ().ChangeState (1);
+				}
+			}
 			ChangeState ((state + 1) % numberOfStates);
 		//	if (debug) 
 		//	{
@@ -44,7 +75,7 @@ public class Maus : MonoBehaviour {
 			Debug.Log ("Not enough Minerals");		}
 		}
 		
-	void ChangeState(int newState){
+	public void ChangeState(int newState){
 		state = newState;
 		Debug.Log ("Changed state to " + newState);
 		ChangeColor (newState);
