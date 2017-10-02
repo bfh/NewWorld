@@ -9,8 +9,8 @@ public class Maus : MonoBehaviour {
 	//state = 3 conquered
 	public int state = 0;
 	public static int food = 500;
-	bool debug = false;
-
+	public bool debug = false;
+	public int cost = 0;
 
 	//Initialize neighbouring Hexes
 	public GameObject northEastHex;
@@ -42,8 +42,8 @@ public class Maus : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		if (food >= 100) {
-			food -= 100;
+		if (food >= cost) {
+			food -= cost;
 			if (state == 1) {
 				Debug.Log("state is 1");
 
