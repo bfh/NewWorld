@@ -14,6 +14,16 @@ public class HexGrid : MonoBehaviour {
 	private float offsetX, offsetY;
 
 	void Start() {
+		BuildMap();
+		NewInTown();
+		StartingPosition();
+
+
+	
+
+	}
+
+	void BuildMap(){
 		float unitLength = ( useAsInnerCircleRadius )? (radius / (Mathf.Sqrt(3)/2)) : radius;
 
 		offsetX = unitLength * Mathf.Sqrt(3);
@@ -22,19 +32,20 @@ public class HexGrid : MonoBehaviour {
 
 		for( int i = 0; i < x; i++ ) {
 			for( int j = 0; j < y; j++ ) {
-					Vector2 hexpos = HexOffset( i, j );
-					Vector3 pos = new Vector3( hexpos.x, hexpos.y, 0 );
-					GameObject newHex = Instantiate(spawnThis, pos, Quaternion.identity );
+				Vector2 hexpos = HexOffset( i, j );
+				Vector3 pos = new Vector3( hexpos.x, hexpos.y, 0 );
+				GameObject newHex = Instantiate(spawnThis, pos, Quaternion.identity );
 				newHex.name = "Hex [" + i + "," + j + "]";
-					
+
 			}
 		}
 		Debug.Log("All spwaned");
+	}
 
+	void NewInTown(){
 		Debug.Log ("Starting assignment process");
 		for( int i = 0; i < x; i++ ) {
 			for( int j = 0; j < y; j++ ) {
-				Debug.Log ("Current i = " + i);
 				GameObject newHex = GameObject.Find ("Hex [" + i + "," + j + "]");
 				if (j%2 ==1) {
 					newHex.GetComponent<Maus> ().northEastHex = GameObject.Find ("Hex [" + (i + 1) + "," + (j + 1) + "]");
@@ -51,12 +62,26 @@ public class HexGrid : MonoBehaviour {
 					newHex.GetComponent<Maus> ().westHex = GameObject.Find ("Hex [" + (i - 1) + "," + j + "]");
 					newHex.GetComponent<Maus> ().northWestHex = GameObject.Find ("Hex [" + (i-1) + "," + (j + 1) + "]");
 				}
-
-
-
 			}
 		}
 	}
+
+	void StartingPosition(){
+		GameObject startingHex = RandomHex (0, x, 0, y);
+		startingHex.GetComponent<Maus> ().ChangeState (3);
+	}
+
+	GameObject RandomHex(int minRangeX, int maxRangeX, int minRangeY, int maxRangeY){
+
+		Debug.Log("Determining random location");
+		int startingX = Random.Range (minRangeX, maxRangeX);
+		int startingY = Random.Range (minRangeY, maxRangeY);
+		GameObject randHex = GameObject.Find ("Hex [" + startingX + "," + startingY + "]");
+		Debug.Log ("Random hex: Hex [" + startingX + "," + startingY + "]");
+
+		return randHex;
+	}
+
 
 	Vector2 HexOffset( int x, int y ) {
 		Vector2 position = Vector2.zero;
