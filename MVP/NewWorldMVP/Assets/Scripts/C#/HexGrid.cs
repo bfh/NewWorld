@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class HexGrid : MonoBehaviour {
-	public GameObject spawnThis;   
+	public GameObject spawnThis;
+	static GameObject startingHex;
 
 	public int x = 5;
 	public int y = 5;
@@ -23,6 +24,8 @@ public class HexGrid : MonoBehaviour {
 
 	}
 
+
+	//Spawns the Hexmap with parameters given in the editor
 	void BuildMap(){
 		float unitLength = ( useAsInnerCircleRadius )? (radius / (Mathf.Sqrt(3)/2)) : radius;
 
@@ -41,6 +44,10 @@ public class HexGrid : MonoBehaviour {
 		}
 		Debug.Log("All spwaned");
 	}
+
+
+	//asigns all hexes it's neighbouring hex	
+	//reason this is done *after* all hexes are spawned is because you can't assign hexes that do not exist yet
 
 	void NewInTown(){
 		Debug.Log ("Starting assignment process");
@@ -67,7 +74,7 @@ public class HexGrid : MonoBehaviour {
 	}
 
 	void StartingPosition(){
-		GameObject startingHex = RandomHex (0, x, 0, y);
+		startingHex = RandomHex (0, x, 0, y);
 		startingHex.GetComponent<Maus> ().ChangeState (3);
 	}
 
@@ -77,6 +84,7 @@ public class HexGrid : MonoBehaviour {
 		int startingX = Random.Range (minRangeX, maxRangeX);
 		int startingY = Random.Range (minRangeY, maxRangeY);
 		GameObject randHex = GameObject.Find ("Hex [" + startingX + "," + startingY + "]");
+
 		Debug.Log ("Random hex: Hex [" + startingX + "," + startingY + "]");
 
 		return randHex;
