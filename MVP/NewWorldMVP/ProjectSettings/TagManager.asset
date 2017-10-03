@@ -45,3 +45,6 @@ TagManager:
   - name: Hexmap
     uniqueID: 384551453
     locked: 0
+  - name: UI
+    uniqueID: 4136595097
+    locked: 0

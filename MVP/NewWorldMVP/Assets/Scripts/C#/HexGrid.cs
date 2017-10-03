@@ -7,7 +7,7 @@ public class HexGrid : MonoBehaviour {
 
 	public int x = 5;
 	public int y = 5;
-
+	public int scale = 1;
 	public float radius = 0.5f;
 	public bool useAsInnerCircleRadius = false;
 
@@ -27,7 +27,7 @@ public class HexGrid : MonoBehaviour {
 
 	//Spawns the Hexmap with parameters given in the editor
 	void BuildMap(){
-		float unitLength = ( useAsInnerCircleRadius )? (radius / (Mathf.Sqrt(3)/2)) : radius;
+		float unitLength = ( useAsInnerCircleRadius )? (radius / (Mathf.Sqrt(3)/2)) /* scale*/ : radius;
 
 		offsetX = unitLength * Mathf.Sqrt(3);
 		offsetY = unitLength * 1.5f;
@@ -45,6 +45,21 @@ public class HexGrid : MonoBehaviour {
 		Debug.Log("All spwaned");
 	}
 
+
+	Vector2 HexOffset( int x, int y ) {
+		Vector2 position = Vector2.zero;
+
+		if( y % 2 == 0 ) {
+			position.x = x * offsetX;
+			position.y = y * offsetY;
+		}
+		else {
+			position.x = ( x + 0.5f ) * offsetX;
+			position.y = y * offsetY;
+		}
+
+		return position;
+	}
 
 	//asigns all hexes it's neighbouring hex	
 	//reason this is done *after* all hexes are spawned is because you can't assign hexes that do not exist yet
@@ -75,7 +90,7 @@ public class HexGrid : MonoBehaviour {
 
 	void StartingPosition(){
 		startingHex = RandomHex (0, x, 0, y);
-		startingHex.GetComponent<Maus> ().ChangeState (3);
+		startingHex.GetComponent<Maus> ().ChangeState (4);
 	}
 
 	GameObject RandomHex(int minRangeX, int maxRangeX, int minRangeY, int maxRangeY){
@@ -91,18 +106,5 @@ public class HexGrid : MonoBehaviour {
 	}
 
 
-	Vector2 HexOffset( int x, int y ) {
-		Vector2 position = Vector2.zero;
 
-		if( y % 2 == 0 ) {
-			position.x = x * offsetX;
-			position.y = y * offsetY;
-		}
-		else {
-			position.x = ( x + 0.5f ) * offsetX;
-			position.y = y * offsetY;
-		}
-
-		return position;
-	}
 }
