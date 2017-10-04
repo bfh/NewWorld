@@ -14,7 +14,7 @@ public class Controller : MonoBehaviour {
 	public static int[] cost = new int[]{0,20,100,200};
 
 	//Base Income per state, will most likely change, maybe make it 2 Dimensional and have some sort of upgrades based on states? Not MVP relevant
-	public static int[] basicIncome = new int[]{0,0,50,-100};
+	public static int[] basicIncome = new int[]{0,0,0,50,-100};
 
 	//total # of different states
 	public static int states = 5;

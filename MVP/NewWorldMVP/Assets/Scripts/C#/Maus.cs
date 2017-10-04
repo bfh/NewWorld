@@ -1,8 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Maus : MonoBehaviour {
+public class Maus : MonoBehaviour , IPointerClickHandler {
+	#region IPointerClickHandler implementation
+	public void OnPointerClick (PointerEventData eventData)
+	{
+		if (state != 0) {
+			CheckResources ();
+		} else {
+			Debug.Log ("error");
+		}
+	}
+	#endregion
 
 	public int state = 0;
 	public int[] cost = Controller.cost;
@@ -23,14 +34,6 @@ public class Maus : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ChangeColor (state);
-	}
-
-	void OnMouseDown(){
-		if (state != 0) {
-			CheckResources ();
-		} else {
-			Debug.Log ("error");
-		}
 	}
 		
 	// Update is called once per frame

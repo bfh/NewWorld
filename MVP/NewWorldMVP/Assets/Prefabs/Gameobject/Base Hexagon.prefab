@@ -84,6 +84,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  cost: 1400000064000000c8000000
+  baseIncome: 0000000000000000320000009cffffff
+  northEastHex: {fileID: 0}
+  eastHex: {fileID: 0}
+  southEastHex: {fileID: 0}
+  southWestHex: {fileID: 0}
+  westHex: {fileID: 0}
+  northWestHex: {fileID: 0}
 --- !u!212 &212746613391799184
 SpriteRenderer:
   m_ObjectHideFlags: 1
