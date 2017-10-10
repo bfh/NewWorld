@@ -9,8 +9,10 @@ public class cameraMovement : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    { GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-         cam = GetComponent<Camera>();
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        cam = GetComponent<Camera>();
+        transform.Translate(new Vector3(12, 13, 0));
     }
 
     // Update is called once per frame
@@ -25,8 +27,9 @@ public class cameraMovement : MonoBehaviour
         {
             if (transform.position.x < camX)
             {
-            
-                transform.Translate(new Vector3(speed * (cam.orthographicSize / 2) * Time.deltaTime, 0, 0)); }
+
+                transform.Translate(new Vector3(speed * (cam.orthographicSize / 2) * Time.deltaTime, 0, 0));
+            }
 
         }
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -55,7 +58,7 @@ public class cameraMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
-            if (cam.orthographicSize < 18 )
+            if (cam.orthographicSize < 25)
             {
                 cam.orthographicSize += 0.1f;
             }

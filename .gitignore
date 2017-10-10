@@ -44,3 +44,4 @@ Thumbs.db
 #merge orig files
 *.orig
 *.plist
+MVP/NewWorldMVP/Temp/

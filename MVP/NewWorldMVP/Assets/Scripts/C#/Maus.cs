@@ -1,73 +1,97 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Maus : MonoBehaviour {
-	//state = 0 undiscovered
-	//state = 1 discovered
-	//state = 2 explored
-	//state = 3 conquered
+public class Maus : MonoBehaviour , IPointerClickHandler {
+	#region IPointerClickHandler implementation
+	public void OnPointerClick (PointerEventData eventData)
+	{
+		if (state != 0) {
+			CheckResources ();
+		} else {
+			Debug.Log ("error");
+		}
+	}
+	#endregion
+
 	public int state = 0;
-	//GameObject player;
-	static int food = 150;
-	bool debug = false;
+	public int[] cost = Controller.cost;
+	public int[] baseIncome = Controller.basicIncome;
+	int income;
+	int incomeMod;
+	//Initialize neighbouring Hexes
+	public GameObject northEastHex;
+	public GameObject eastHex;
+	public GameObject southEastHex;
+	public GameObject southWestHex;
+	public GameObject westHex;
+	public GameObject northWestHex;
 
 	//the number of states, used for changing states.
-	int numberOfStates = 4;
+	int numberOfStates = Controller.states;
 
-	//The colors corespond to their state stateColor[0] is for state 0 etc.
-	static Color[] stateColor = new Color[] {Color.black, Color.blue, Color.blue, Color.green, Color.yellow};
-
-	//int food = 0;//player.GetComponent<PlayerRessources>().food;
-
-	void ChangeColor (int index){
-		GetComponent<SpriteRenderer>().color = stateColor[index];
-		if (debug) {
-			Debug.Log ("Changing Color to " + stateColor [index]);
-		}
-	}
-		
 	// Use this for initialization
 	void Start () {
-			ChangeColor (0);
+		ChangeColor (state);
+	}
+		
+	// Update is called once per frame
+	void Update () {
+		
 	}
 
-	void OnMouseDown(){
-		if (food >= 100) {
-			food -= 100;
-			ChangeState ((state + 1) % numberOfStates);
-		//	if (debug) 
-		//	{
-				Debug.Log ("New Food = " + food);
-		//	}
-		} else {
-			Debug.Log ("Not enough Minerals");		}
+	void ChangeColor (int index){
+		GetComponent<SpriteRenderer>().color = Controller.stateColor[index];
+	}
+
+
+	void UpdateTown (){
+		Debug.Log("Updating surrounding Hexes");
+
+		if (eastHex != null && eastHex.GetComponent<Maus> ().state == 0) {
+			eastHex.GetComponent<Maus> ().ChangeState (1);
 		}
-		
-	void ChangeState(int newState){
+		if (northEastHex != null && northEastHex.GetComponent<Maus> ().state == 0) {
+			northEastHex.GetComponent<Maus> ().ChangeState (1);
+		}
+		if (southEastHex != null && southEastHex.GetComponent<Maus> ().state == 0) {
+			southEastHex.GetComponent<Maus> ().ChangeState (1);
+		}
+		if (southWestHex != null && southWestHex.GetComponent<Maus> ().state == 0) {
+			southWestHex.GetComponent<Maus> ().ChangeState (1);
+		}
+		if (westHex != null && westHex.GetComponent<Maus> ().state == 0) {
+			westHex.GetComponent<Maus> ().ChangeState (1);
+		}
+		if (northWestHex != null && northWestHex.GetComponent<Maus> ().state == 0) {
+			northWestHex.GetComponent<Maus> ().ChangeState (1);
+		}
+	}
+
+	public void ChangeState(int newState){
+		if (newState >= 2) {
+			UpdateTown();
+		}
 		state = newState;
 		Debug.Log ("Changed state to " + newState);
 		ChangeColor (newState);
-		switch (state) {
-		case 0:
-			break;
+		UpdateIncome (baseIncome[state]+incomeMod);
 
-		case 1:
-			break;
+	}
 
-		case 2:
-			break;
-		
-		case 3:
-			break;
+	//Call this method whenver you want to change the income, e.g. when changing states
+	void UpdateIncome(int newIncome){
+		Controller.income += (newIncome - income);
+		income = newIncome;
+	}
 
-		default:
-			Debug.Log("Error: Unexpected state");
-			break;
+
+	//Checks if there are enough resources to change the state, if so it will do so
+	void CheckResources(){
+		bool change = Controller.PayUp(cost[state]);
+		if (change) {
+			ChangeState ((state + 1) % numberOfStates);
 		}
-
-	}
-	// Update is called once per frame
-	void Update () {
-	}
+		Debug.Log ("new Food: " + Controller.food);}
 }

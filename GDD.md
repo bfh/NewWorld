@@ -16,6 +16,12 @@ wasd for camera movement, mostly mouse controls.
 Shortcuts for frequently used commands
 Control rebindings in the options Menu
 ## Hex map:
+Hexes are revealed as the player expands current states of hexes:
+- unknown: The player has no information about these hexes and can not interact with them
+- found: the player can decide to explore this hex, when he does an event forcing a decision of the player will trigger
+- Colonized: colonized hexes produce resources for the player each turn.
+- Settlement: settlements consume resources (eventually food) and allow the player to do additional things per turn.
+
 Hex Types:
 - Plains
 - Forets
