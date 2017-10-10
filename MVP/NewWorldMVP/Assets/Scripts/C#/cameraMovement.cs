@@ -12,7 +12,7 @@ public class cameraMovement : MonoBehaviour
     {
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
         cam = GetComponent<Camera>();
-        transform.Translate(new Vector3(12, 13, 0));
+        transform.Translate(new Vector3(0, 0, 0));
     }
 
     // Update is called once per frame
