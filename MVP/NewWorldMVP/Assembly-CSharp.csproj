@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\C#\AcessTester.cs" />
      <Compile Include="Assets\Scripts\C#\cameraMovement.cs" />
+     <Compile Include="Assets\Scripts\C#\ChoiceButton.cs" />
      <Compile Include="Assets\Scripts\C#\Controller.cs" />
      <Compile Include="Assets\Scripts\C#\HexGrid.cs" />
      <Compile Include="Assets\Scripts\C#\Maus.cs" />

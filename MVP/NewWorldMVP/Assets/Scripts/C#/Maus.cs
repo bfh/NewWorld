@@ -7,6 +7,7 @@ public class Maus : MonoBehaviour , IPointerClickHandler {
 	#region IPointerClickHandler implementation
 	public void OnPointerClick (PointerEventData eventData)
 	{
+		//spawnEventCanvas();
 		if (state != 0) {
 			CheckResources ();
 		} else {
@@ -20,6 +21,7 @@ public class Maus : MonoBehaviour , IPointerClickHandler {
 	public int[] baseIncome = Controller.basicIncome;
 	int income;
 	int incomeMod;
+	public GameObject notificationCanvas;
 	//Initialize neighbouring Hexes
 	public GameObject northEastHex;
 	public GameObject eastHex;
@@ -40,6 +42,16 @@ public class Maus : MonoBehaviour , IPointerClickHandler {
 	void Update () {
 		
 	}
+
+
+	void spawnEventCanvas(){
+		Vector3 center = GameObject.Find ("Main Camera").transform.position;
+		Instantiate(notificationCanvas, center, Quaternion.identity);
+
+		GameObject[] optionButtons = GameObject.FindGameObjectsWithTag("Choice");
+		Debug.Log (optionButtons);
+	}
+
 
 	void ChangeColor (int index){
 		GetComponent<SpriteRenderer>().color = Controller.stateColor[index];
