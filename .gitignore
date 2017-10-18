@@ -45,3 +45,5 @@ Thumbs.db
 *.orig
 *.plist
 MVP/NewWorldMVP/Temp/
+MVP/.gitignore.txt
+MVP/.gitignore.txt

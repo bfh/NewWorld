@@ -47,3 +47,5 @@ Thumbs.db
 MVP/NewWorldMVP/Temp/
 *.plist
 MVP/NewWorldMVP/Temp/
+*.plist
+MVP/NewWorldMVP/Temp/

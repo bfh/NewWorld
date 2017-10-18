@@ -39,7 +39,7 @@ public class HexGrid : MonoBehaviour {
 				Vector3 pos = new Vector3( hexpos.x, hexpos.y, 0 );
 				GameObject newHex = Instantiate(spawnThis, pos, Quaternion.identity );
 				newHex.name = "Hex [" + i + "," + j + "]";
-
+                //array string with x possibilities , place ressources in index positions 
 			}
 		}
 		Debug.Log("All spwaned");
