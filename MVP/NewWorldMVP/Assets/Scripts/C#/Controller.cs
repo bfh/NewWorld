@@ -8,7 +8,7 @@ public class Controller : MonoBehaviour {
 	public static int income;
 	public static int food = 500;
 	public static int actions;
-	public static int maxActions;
+	public static int maxActions = 1;
 	public static int activeEvent;
 	public static bool choiceMade =  false;
 	public static int choiceID;
@@ -25,8 +25,9 @@ public class Controller : MonoBehaviour {
 	public static Color[] stateColor = new Color[] {Color.black, Color.blue, Color.white, Color.green, Color.yellow};
 
 	//Methods
-
-
+	private void Start(){
+		actionsReset();
+	}
 
 	public static void actionsReset(){
 		actions = maxActions;
@@ -50,5 +51,7 @@ public class Controller : MonoBehaviour {
 	}
 		
 	public static void executeEvent (int eventID){
+		
 	}
+
 }

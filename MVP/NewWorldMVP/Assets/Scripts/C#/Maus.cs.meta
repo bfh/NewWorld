@@ -1,10 +1,18 @@
 fileFormatVersion: 2
 guid: 8dc63205a01eb473ea91614ff5c9aecf
-timeCreated: 1505734438
+timeCreated: 1508917508
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - notificationCanvas: {fileID: 1341714006999664, guid: b856dcd7df26f41499a82026dacee559,
+      type: 2}
+  - northEastHex: {instanceID: 0}
+  - eastHex: {instanceID: 0}
+  - southEastHex: {instanceID: 0}
+  - southWestHex: {instanceID: 0}
+  - westHex: {instanceID: 0}
+  - northWestHex: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

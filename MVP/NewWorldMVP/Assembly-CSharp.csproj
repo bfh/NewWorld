@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PopupEvent.cs" />
      <Compile Include="Assets\Scripts\C#\AcessTester.cs" />
      <Compile Include="Assets\Scripts\C#\cameraMovement.cs" />
      <Compile Include="Assets\Scripts\C#\ChoiceButton.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Scripts\C#\HexGrid.cs" />
      <Compile Include="Assets\Scripts\C#\Maus.cs" />
      <Compile Include="Assets\Scripts\C#\NextTurn.cs" />
+     <Compile Include="Assets\Scripts\C#\Popup\Choice0.cs" />
      <Compile Include="Assets\Scripts\C#\RandomEvents.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
