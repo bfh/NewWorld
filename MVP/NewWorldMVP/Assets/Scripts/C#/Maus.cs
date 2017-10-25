@@ -7,20 +7,27 @@ public class Maus : MonoBehaviour , IPointerClickHandler {
 	#region IPointerClickHandler implementation
 	public void OnPointerClick (PointerEventData eventData)
 	{
-		//spawnEventCanvas();
-		if (state != 0) {
-			CheckResources ();
+
+		Debug.Log("Click detected");
+		if (Controller.actions > 0) {
+
+			if (state != 0) {
+				Debug.Log ("Checking");
+				CheckResources ();
+				Controller.actions -= 1;
+			} else {
+				Debug.Log ("error");
+			}
 		} else {
-			Debug.Log ("error");
+			Debug.Log ("not enough Actions left");
 		}
 	}
 	#endregion
-
+	bool firstTurn = true;
 	public int state = 0;
 	public int[] cost = Controller.cost;
 	public int[] baseIncome = Controller.basicIncome;
 	int income;
-	int incomeMod;
 	public GameObject notificationCanvas;
 	//Initialize neighbouring Hexes
 	public GameObject northEastHex;
@@ -30,14 +37,12 @@ public class Maus : MonoBehaviour , IPointerClickHandler {
 	public GameObject westHex;
 	public GameObject northWestHex;
 
-
-    //the number of states, used for changing states.
-    int numberOfStates = Controller.states;
+	//the number of states, used for changing states.
+	int numberOfStates = Controller.states;
 
 	// Use this for initialization
 	void Start () {
 		ChangeColor (state);
-
 	}
 		
 	// Update is called once per frame
@@ -50,13 +55,13 @@ public class Maus : MonoBehaviour , IPointerClickHandler {
 		Vector3 center = GameObject.Find ("Main Camera").transform.position;
 		Instantiate(notificationCanvas, center, Quaternion.identity);
 
-		GameObject[] optionButtons = GameObject.FindGameObjectsWithTag("Choice");
-		Debug.Log (optionButtons);
+		Debug.Log ("Event");
 	}
 
 
 	void ChangeColor (int index){
-		GetComponent<SpriteRenderer>().color = Controller.stateColor[index];
+		//GetComponent<SpriteRenderer>().color = Controller.stateColor[index];
+        GetComponent<SpriteRenderer>().material = Controller.stateMat[index];
 	}
 
 
@@ -84,13 +89,17 @@ public class Maus : MonoBehaviour , IPointerClickHandler {
 	}
 
 	public void ChangeState(int newState){
+
 		if (newState >= 2) {
 			UpdateTown();
+		}
+		if (newState == 4) {
+			Controller.maxActions += 1;
 		}
 		state = newState;
 		Debug.Log ("Changed state to " + newState);
 		ChangeColor (newState);
-		UpdateIncome (baseIncome[state]+incomeMod);
+		UpdateIncome (baseIncome[state]);
 
 	}
 
@@ -103,9 +112,17 @@ public class Maus : MonoBehaviour , IPointerClickHandler {
 
 	//Checks if there are enough resources to change the state, if so it will do so
 	void CheckResources(){
+		if (state == 4) {
+			ChangeState (3);
+		}
+		else{
 		bool change = Controller.PayUp(cost[state]);
 		if (change) {
+			Debug.Log ("changing state");
 			ChangeState ((state + 1) % numberOfStates);
+		} else {
+			Debug.Log ("this should not happen");
 		}
 		Debug.Log ("new Food: " + Controller.food);}
+	}
 }

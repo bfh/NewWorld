@@ -8,7 +8,7 @@ public class ChoiceButton : MonoBehaviour , IPointerClickHandler {
 	public void OnPointerClick (PointerEventData eventData){
 		Controller.choiceID = choiceID;
 		choiceMade = true;
-		Controller.executeEvent(1);
+		Controller.executeEvent(Random.Range(0, 5));
 	}
 
 	#endregion

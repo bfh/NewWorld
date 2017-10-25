@@ -9,8 +9,12 @@ public class NextTurn : MonoBehaviour, IPointerClickHandler {
 	{
 		Controller.food += Controller.income;
 		Controller.actionsReset();
-		Controller.getRandomEvent();
+	//	Controller.getRandomEvent();
 		Debug.Log (Controller.food);
+		if (Controller.food <= 0) {
+			Controller.food = 200;
+			Debug.Log ("Your villagers are starving");
+		}
 	}
 	#endregion
 

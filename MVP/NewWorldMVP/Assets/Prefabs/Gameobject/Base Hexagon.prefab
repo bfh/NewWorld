@@ -84,8 +84,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  cost: 1400000064000000c8000000
-  baseIncome: 0000000000000000320000009cffffff
+  cost: 000000001400000064000000c8000000
+  baseIncome: 000000000000000032000000640000009cffffff
+  notificationCanvas: {fileID: 1750371473206424, guid: 4d4472815d44a41e997b7a27ea43a3b3,
+    type: 2}
   northEastHex: {fileID: 0}
   eastHex: {fileID: 0}
   southEastHex: {fileID: 0}

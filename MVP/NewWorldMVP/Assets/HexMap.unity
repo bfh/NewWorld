@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb918e3f00d84d44be2439e8f584c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &86512461
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +382,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d0a25afee2b4d2293d64b066b53401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoodFog: {fileID: 2100000, guid: 1d32f80f76d062542980d2ce752735ec, type: 2}
+  Wood: {fileID: 2100000, guid: 0c3ee3ee3a1b89f4eacba089961c353c, type: 2}
+  WoodUse: {fileID: 2100000, guid: 5cf188105134dec44b684a2022a58634, type: 2}
+  FoodFog: {fileID: 2100000, guid: 9d3d2384611845a4c8989da7324e35f9, type: 2}
+  Food: {fileID: 2100000, guid: ecf4e84e0ee458349bd42e0d39c3bff9, type: 2}
+  FoodUse: {fileID: 2100000, guid: e6e8481477063994195e188d2e4d7b98, type: 2}
+  IronFog: {fileID: 2100000, guid: 3d22738a8ced2da43a65f0d238b3f0b2, type: 2}
+  Iron: {fileID: 2100000, guid: 2a08d77861e06124d98d68467cf48efc, type: 2}
+  IronUse: {fileID: 2100000, guid: d4b011371c7f21340a5d4e84c64dcb38, type: 2}
+  CoalFog: {fileID: 2100000, guid: 6bdb27f6f31a97b46966666ad91d2c1d, type: 2}
+  Coal: {fileID: 2100000, guid: 8bb59d592f1865a4c814bc6cead5b744, type: 2}
+  CoalUse: {fileID: 2100000, guid: 993d25cd5ca1996409b9dd965f1ab6dd, type: 2}
+  Village: {fileID: 2100000, guid: e682eae29726a674cb15057a5131168b, type: 2}
+  Hidden: {fileID: 2100000, guid: 6a89f458d0075bb4d97e4aeb9d1db7ec, type: 2}
 --- !u!1001 &454507026
 Prefab:
   m_ObjectHideFlags: 0
@@ -481,7 +496,7 @@ Prefab:
     - target: {fileID: 224675454607786956, guid: d446204aa6a984d9f86d13ad975ed154,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.0017525554
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224675454607786956, guid: d446204aa6a984d9f86d13ad975ed154,
         type: 2}
@@ -511,7 +526,52 @@ Prefab:
     - target: {fileID: 224996707763077326, guid: d446204aa6a984d9f86d13ad975ed154,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.13571076
+      value: 0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 224280762034666468, guid: d446204aa6a984d9f86d13ad975ed154,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224280762034666468, guid: d446204aa6a984d9f86d13ad975ed154,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224280762034666468, guid: d446204aa6a984d9f86d13ad975ed154,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 224280762034666468, guid: d446204aa6a984d9f86d13ad975ed154,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 224062379396695086, guid: d446204aa6a984d9f86d13ad975ed154,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224062379396695086, guid: d446204aa6a984d9f86d13ad975ed154,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 224722289874304782, guid: d446204aa6a984d9f86d13ad975ed154,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224722289874304782, guid: d446204aa6a984d9f86d13ad975ed154,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 224996707763077326, guid: d446204aa6a984d9f86d13ad975ed154,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -39.51996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d446204aa6a984d9f86d13ad975ed154, type: 2}
