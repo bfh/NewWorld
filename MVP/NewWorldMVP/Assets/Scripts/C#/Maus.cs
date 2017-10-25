@@ -30,12 +30,14 @@ public class Maus : MonoBehaviour , IPointerClickHandler {
 	public GameObject westHex;
 	public GameObject northWestHex;
 
-	//the number of states, used for changing states.
-	int numberOfStates = Controller.states;
+
+    //the number of states, used for changing states.
+    int numberOfStates = Controller.states;
 
 	// Use this for initialization
 	void Start () {
 		ChangeColor (state);
+
 	}
 		
 	// Update is called once per frame

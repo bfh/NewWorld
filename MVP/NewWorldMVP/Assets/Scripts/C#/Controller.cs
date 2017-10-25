@@ -15,8 +15,23 @@ public class Controller : MonoBehaviour {
 	//Base costs
 	public static int[] cost = new int[]{0,20,100,200};
 
-	//Base Income per state, will most likely change, maybe make it 2 Dimensional and have some sort of upgrades based on states? Not MVP relevant
-	public static int[] basicIncome = new int[]{0,0,50,100,-100};
+    //materials
+    public Material Village;
+    public Material Iron;
+    public Material IronUse;
+    public Material IronFog;
+    public Material Coal;
+    public Material CoalUSe;
+    public Material CoalFog;
+    public Material Food;
+    public Material FoodUse;
+    public Material FoodFog;
+    public Material Wood;
+    public Material WoodUSe;
+    public Material WoodFog;
+
+    //Base Income per state, will most likely change, maybe make it 2 Dimensional and have some sort of upgrades based on states? Not MVP relevant
+    public static int[] basicIncome = new int[]{0,0,50,100,-100};
 
 	//total # of different states
 	public static int states = 5;
