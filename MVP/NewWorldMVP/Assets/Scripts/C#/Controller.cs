@@ -43,7 +43,6 @@ public class Controller : MonoBehaviour {
 	//Methods
 	private void Start(){
 		actionsReset();
-<<<<<<< HEAD
 
         stateMat[0] = Hidden;
         stateMat[1] = WoodFog;
@@ -63,9 +62,7 @@ public class Controller : MonoBehaviour {
 
     }
 
-=======
-	}
->>>>>>> 79c895debe92fb023b6c6b00b82b72e3645dcf87
+
 
 	public static void actionsReset(){
 		actions = maxActions;
